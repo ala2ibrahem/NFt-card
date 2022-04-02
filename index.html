@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      --main-bg : hsl(217, 54%, 11%);
+      --card-bg : hsl(216, 50%, 16%);
+      --line-color : hsl(215, 32%, 27%);
+      --white : hsl(0, 0%, 100%);
+      --Cyan: hsl(178, 100%, 50%);
+      --Soft-blue: hsl(215, 51%, 70%);
+      --Desktop: 1440px;
+    }
+    *{
+      margin: 0;padding: 0;
+      border: none;outline: none;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      transition: .2s all linear;
+    }
+    html{
+      font-size: 18px;
+    }
+    header{
+      height: 100vh;
+      background-color: var(--main-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header .container{
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: .5rem;
+      max-width: 300px;
+      box-shadow: 0px 20px 30px 40px rgba(0,0,0,0.2),0px 20px 30px 30px rgba(20,37,61,0.2);
+    }
+    header .container .img-container img{
+      width: 100%;
+      object-fit: contain;
+      border-radius: .5rem;
+    }
+    header .container .img-container{
+      position: relative;
+    }
+    header .container .img-container .icon{
+      position: absolute;
+      background-color: hsl(178, 100%, 50%,0.5);
+      border-radius: .5rem;
+      top: 0;
+      width: 100%;
+      height: 98%;
+      display: none;
+    }
+    header .container .img-container:active > .icon{
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+    }
+    header .container h1{
+      font-size: 20px;
+      color: var(--white);
+      margin: .5rem 0;
+    }
+    header .container h1:active{
+      color: var(--Cyan);
+      cursor: pointer;
+    }
+    header .container p{
+      font-weight: 400;
+      color: var(--line-color);
+    }
+    header .container .info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: .1rem solid var(--line-color);
+      padding: 1rem 0;
+    }
+    header .container .info h2{
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--Cyan);  
+      font-weight: 600;
+    }
+    header .container .info h2 span{
+      margin-right: .2rem;
+    }
+    header .container .info .days{
+      color: var(--line-color);
+    }
+    header .container .profile-container{
+      display: flex;
+      align-items: center;
+      padding-top: .5rem;
+    }
+    header .container .profile-container img{
+      width: 12%;
+      border: .1rem solid var(--white);
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+    header .container .profile-container p span{
+      color: var(--white);
+    }
+    header .container .profile-container p span:active{
+      color: var(--Cyan);
+      cursor: pointer;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<header>
+  <div  class="container">
+    <div class="img-container">
+        <img src="./images/image-equilibrium.jpg" alt="equilibrium">
+        <div class="icon">
+          <!-- <img src="./images/icon-view.svg" alt="View icon" class="view-icon"> -->
+          <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h48v48H0z"/><path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15Zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10Zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6Z" fill="#FFF" fill-rule="nonzero"/></g></svg>
+        </div>
+    </div>
+    <h1>Equilibrium #3429</h1>
+    <p>Our Equilibrium collection promotes balance and calm.</p>
+    <div class="info">
+      <h2>
+        <span>
+          <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+        </span>
+        0.041 ETH
+      </h2>
+      <h2 class="days">
+        <span>
+          <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+        </span>
+        3 days left
+      </h2>
+    </div>
+    <div class="profile-container">
+      <img src="./images/image-avatar.png" alt="avatar">
+      <p>Creation of <span>Jules Wyvern</span></p>
+    </div>
+  </div>
+</header>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">ala2ibrahem</a>.
+  </div> -->
+</body>
+</html>
